@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef} from 'react';
+import './Components/App.css';
+import Homepage from './Components/Homepage.js';
+import Featured from './Components/Featured.js';
+import Videos from './Components/Videos.js';
+import Events from './Components/Events.js';
+import Merch from './Components/Merch.js';
+import Contact from './Components/Contact.js';
+import Mailing from './Components/Mailing.js';
+import Footer from './Components/Footer.js';
+
 
 function App() {
+
+  const videosRef = useRef(null);
+
+  function scrollToComponent(ref) {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behaviour: "smooth" });
+    }
+  }
+  const videoScrollToComponent = () => {
+    scrollToComponent(videosRef);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Homepage/>
+    <Featured/>
+    <Videos ref={videosRef}/>
+    <Events/>
+    <Merch/>
+    <Contact/>
+    <Mailing/>
+    <Footer/>
     </div>
   );
 }

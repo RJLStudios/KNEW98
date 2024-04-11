@@ -1,0 +1,1007 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic';
+  scroll-behavior: smooth;
+}
+
+.html {
+  overflow-y: auto;
+}
+
+.Margin {
+  padding: 0px 0.7em;
+}
+
+.App {
+  background-color: black;
+}
+
+/*FONT STYLES*/
+
+:root {
+  --primary-font-sz: 1.2em;
+  --primary-font-weight: 700;
+}
+
+.Italic {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+
+}
+
+/*HEADER STYLES*/
+.Text-Wrapper-Overflow{
+overflow: hidden;
+width: fit-content;
+height: fit-content;
+
+}
+
+.Homepage {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-position: bottom;
+  }
+
+.Header {
+ height: 65px;
+ position: fixed;
+ top: 0;
+ display: flex;
+ align-items: center;
+ width: 100%;
+ transition: 400ms;
+ flex-direction: row;
+ z-index: 5;
+ justify-content: space-between;
+ padding: 0 1em;
+ 
+}
+
+.Logo{
+height: 100%;
+display: flex;
+align-items: center;
+font-size: 1.4em;
+font-weight: var(--primary-font-weight);
+width: 40vw;
+}
+
+
+.Responsive-links {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  gap: 15px;
+  font-size: 0.9em;
+  letter-spacing: 1.3px;
+  font-weight: 200 ;
+list-style-type: none;
+width: 40vw;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.7px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.li {
+  list-style-type: none;
+  text-align: none;
+
+}
+
+li:hover {
+color: grey;
+cursor: pointer;
+}
+
+a{
+text-decoration: none;
+color: white;
+font-size: 1.2em;
+}
+
+.li:hover {
+  color: grey;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.Homepage-Wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 1.5px;
+}
+
+.Homepage-Content {
+  height: fit-content;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Homepage-Socials {
+font-size: 1em;
+font-weight: var(--primary-font-weight);
+width: 140px;
+height: fit-content;
+margin: 0 auto 0 0;
+}
+
+.Socials {
+  height: 100%;
+  width: 100%;
+  font-size: 1.3em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Homepage-Header {
+  font-size: 5.5em;
+  font-weight: var(--primary-font-weight);
+  padding-bottom: 20px;
+ 
+}
+
+.Homepage-Bio {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.Scroll-Prompt {
+display: flex;
+justify-content: center;
+  font-size: 1em;
+  height: fit-content;
+  width:99%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2em;
+  letter-spacing: 3.5px;
+
+
+}
+
+.Scroll-Prompt:hover {
+  color: grey;
+  cursor: pointer;
+}
+
+@media screen and (max-width:800px) {
+  .Logo {
+font-size: 1.2em;
+  }
+
+  .Socials {
+    font-size: 1.4em;
+  }
+  
+  .Homepage-Header {
+    font-size: 3em;
+  }
+  
+  .Homepage-Bio {
+    font-size: 1.15em;
+    font-weight: 700;
+  
+  }
+  
+  .Scroll-Prompt {
+  display: flex;
+    font-size: 0.9em;
+    letter-spacing: 3px;
+  
+  }
+}
+
+
+@media screen and (min-width:1000px) {
+.Homepage {
+background-position: center;
+
+}
+}
+
+.Featured {
+    width: 100%;
+    height: fit-content;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    padding:6em 8em;
+}
+
+.Featured-Bio {
+min-height: 100%;
+width: 50%;
+display: flex;
+flex-direction: column;
+
+}
+
+.Spotify {
+  width: 100%;
+  height: 51%;
+}
+
+.Featured-Cover {
+  height: 100%;
+width: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+margin-left: 100px;
+}
+
+.Featured-Title {
+ font-size: 1.2em;
+ letter-spacing: 0.2em;
+ font-weight: 400;
+ height: fit-content;
+}
+
+.Featured-Desc {
+  font-size: 2.55em;
+  letter-spacing: 1.5px;
+  font-weight: var(--primary-font-weight);
+  margin: 1em 0em;
+}
+
+.Caramel-Tape {
+height: 100%;
+width: 100%;
+border-radius: 40px;
+}
+
+.Listen-Div {
+width: 100%;
+height: fit-content;
+margin: 40px 0px;
+}
+
+
+.Listen-Btn, .Vid-Btn, .Form-Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+width: 200px;
+padding: 18px;
+border: 1px solid white;
+margin: 0 auto;
+border-radius: 30px;
+font-size: 1em;
+letter-spacing: 3px;
+font-weight: 100;
+}
+
+.Listen-Btn:hover, .Vid-Btn:hover, .Form-Btn:hover {
+  color: black;
+  background-color: white;
+  transition: 400ms;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+
+@media screen and (max-width:1200px) {
+  .Featured {
+display: flex;
+flex-direction: column;
+height: fit-content;
+align-content: center;
+padding: 0px;
+margin: 0 auto;
+  }
+
+  .Featured-Bio {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 2em;
+
+    }
+ 
+    .Featured-Title {
+      font-size: 0.95em;
+      padding-bottom: 10px;
+    }
+    .Featured-Desc {
+      width: 100%;
+      font-size: 1.3em;
+      display: flex;
+      justify-content: center;
+      letter-spacing: 2.5PX;
+    }
+    
+    
+    .Featured-Cover {
+      height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    padding: 0em 2em;
+    }
+
+    .Caramel-Tape {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .Spotify {
+      width: 100%;
+      height: 51%;
+      margin-top: 1em;
+      margin-bottom: -2em;
+    }
+}
+
+.Videos {
+  width: 100%;
+  height: fit-content;
+  background-color: black;
+  padding:3em 8em;
+  color: white;
+  
+  
+}
+
+.Video-Wrapper {
+  height: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.Reverse {
+flex-direction: row-reverse;
+}
+
+.Video-Frame {
+  height: 100%;
+  width: 60%;
+  border-radius: 20px;
+  overflow-y: hidden;
+}
+
+.Video-Desc {
+  height: 100%;
+  width: 40%;
+  padding: 0em 1em;
+}
+.Border{
+  width: 100%;
+  height: 0.5px;
+  /*border-bottom: 0.5px solid var(--primary-cream);*/
+  margin: 4em auto;
+  position: relative;
+ 
+
+}
+
+.Border-Fill {
+width: 100%;
+height: 100%;
+position: absolute;
+background-color:white ;
+left: 0;
+top: 0;
+}
+.Video-Title {
+    font-size: 1.2em;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+    padding-bottom: 1.5em;
+}
+
+.Video-Bio {
+  font-size: 1.5em;
+  letter-spacing: 1.5px;
+  font-weight: var(--primary-font-weight);
+  padding-bottom: 1em;
+}
+
+.More-Vids {
+width: 100%;
+margin: 4em 0em;
+}
+
+@media screen and (max-width:1000px) {
+
+  .Videos {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2em 0em;
+flex-direction: column;
+  }
+
+
+  .Video-Wrapper {
+    height: fit-content;
+    width: 80vw;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .Video-Title {
+    font-size: 0.9em;
+}
+
+  
+  .Video-Frame, .Video-Desc {
+    width: 100%;
+  }
+
+  .Video-Frame {
+    width: 100%;
+    height: 40vh;
+
+  }
+
+  .Video-Desc {
+    height: fit-content;
+    padding: 0;
+  }
+
+  .Border {
+    width: 80vw;
+  }
+}
+
+
+
+
+
+.Progress-div {
+height: fit-content;
+border: 1px solid;
+display: flex;
+margin: auto;
+justify-content: center;
+align-items: center;
+flex-flow: row;
+}
+
+
+.Progress-div:before {
+  content: "";
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 125vmax;
+  height: 125vmax;
+  border-radius: 100%;
+  background-image: linear-gradient(to top, white 0%, white 100%);
+  box-shadow: 0 0 20px white;
+  transition: all 500ms cubic-bezier(.49,.23,0,.99) ;
+  opacity: 0;
+
+}
+
+.completed:before{
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.5;
+}
+
+svg {
+  display: none;
+  position: sticky;
+  transform: rotate(-90deg);
+}
+
+svg circle {
+  stroke: rgba(0,0,0,0.1);
+  stroke-width: 14px;
+  stroke-linecap: round;
+  fill: transparent;
+}
+
+svg .progress-bar {
+  stroke: url(#grad);
+  transition: stroke-dashoffset 0 ease-in-out; 
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+}
+
+.pct {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-feature-settings: "tnum"; 
+  font-variant-numeric: tabular-nums;
+}
+
+
+.Events {
+  width: 100%;
+  height: fit-content;
+  padding:5em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 100px;
+  background-color: black;
+}
+
+.Overflow-Container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Events-Banner {
+  width: 100%;
+  height: 50vh;
+  display:flex;
+  align-items: end;
+  border-radius: 30px;
+  background-position: center;
+}
+
+.Banner-Wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.Banner-Carousel {
+  display: flex;
+  align-items: center;
+  animation: 15s slide infinite linear;
+  padding: 1.5rem 0rem;
+}
+
+.Banner-Text {
+  height: 5rem;
+margin:0rem 60px;
+display: flex;
+align-items: center;
+font-size: 7rem;
+}
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0)
+  }
+  to {
+    transform: translateX(-100%)
+  }
+}
+
+@media screen and (max-width:800px) {
+
+  .Banner-Carousel {
+    padding: 0.5rem 0rem;
+  }
+
+  .Banner-Text {
+    height: fit-content;
+  font-size: 8rem;
+  }
+  
+  
+}
+
+/*height: 100%;
+width:  100%;
+font-size: 9em;
+display: flex;
+align-content: center;
+justify-content: center;
+-moz-transform: translateX(100%);
+-webkit-transform: translateX(100%);
+transform: translateX(100%); 
+-moz-animation: my-animation 15s linear infinite;
+-webkit-animation: my-animation 15s linear infinite;
+animation: my-animation 15s linear infinite;*/
+
+
+
+.Events-Grid {
+  padding: 3em 0em;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.8em;
+  width: 100%;
+}
+
+
+.tour-dates {
+  height: fit-content;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 30px;
+  border-bottom: 1px solid white;
+}
+
+.date-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.date {
+width: 20%;
+height: 100%;
+padding-right: 10px;
+}
+
+.venue {
+width: 60%;
+height: 100%;
+}
+
+.tour-btn-div {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.tour-btn {
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  height: 20px;
+  min-width: fit-content;
+  padding: 10px;
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: 100;
+  letter-spacing: 2.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0px;
+}
+
+.tba{
+  color: grey;
+  border: 1px solid grey;
+}
+
+
+
+
+@media screen and (max-width:800px) {
+  .Events {
+    padding: 2em 0em;
+  }
+  .Events-Banner {
+    width: 80vw;
+    height: 30vh;
+    display:flex;
+    align-items: end;
+    border-radius: 30px;
+  }
+  
+  .Banner-Text {
+    height: 100%;
+    width: 100%;
+    font-size: 5em;
+  }
+
+  
+
+.tour-dates {
+  height: fit-content;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.4em;
+
+}
+
+.date-wrapper {
+ 
+  flex-direction: column;
+}
+
+.date, .venue {
+ width: fit-content;
+ text-align: center;
+ padding: 10px;
+}
+
+.tour-btn {
+margin: 20px 0px ;
+}
+
+}
+
+.Contact {
+  width: 100%;
+  height: fit-content;
+  padding: 0em 5em;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding-bottom: 4em;
+
+
+}
+.Contact-Carousel {
+  font-size: 5em;
+  height: fit-content;
+  padding: 0.5em 0em;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.Contact-Img-Wrap {
+height: 100%;
+width: 50%;
+}
+
+.Contact-Img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.Contact-Form {
+height: 100%;
+width: 50%;
+padding: 5em;
+font-size: 1.2em;
+font-weight: 100;
+}
+
+.Form-Outline {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.form-label {
+  width: 100px;
+
+}
+
+.CTA-Wrapper {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.Email-Form {
+  width: 100%;
+  height: 80%;
+
+}
+.form-control {
+width: 80%;
+font-size: 0.8em;
+background-color: rgb(46, 44, 44);
+box-shadow: none;
+border: none;
+border-radius: 20px;
+color: white;
+padding: 15px;
+overflow: hidden;
+border: 1px solid grey;
+}
+
+.form-control-sm {
+  height: 100%;
+  
+}
+
+.Error {
+  font-size: 0.7em;
+  margin-left:  auto;
+  height: 35px;
+  width: 80%;
+  padding: 0.5em 0em 1em 0em;
+  color: red;
+  letter-spacing: 1px;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.Form-Btn {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+
+}
+
+@media screen and (max-width:1200px) {
+  .Contact-Img-Wrap {
+   display: none;
+  }
+
+  
+.Contact-Form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+  padding: 0;
+  font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .Contact{
+    padding: 0em;
+  }
+.Contact-Form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+  padding: 0em 1em 2em 1em;
+  font-size: 1.2em;
+  }
+
+  .Contact-Carousel {
+    font-size: 3em;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+  
+  }
+}
+
+.Mailing {
+  height: fit-content;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0em;
+}
+
+.Mailing-Title{
+  font-size: 3.5em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+}
+
+.Join-List {
+ height: fit-content;
+ width: 100%;
+
+ font-size: 2.8em;
+ display: flex;
+justify-content: center;
+}
+
+.Form-Wrapper {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+.Mailing-Input {
+  width: 50vw;
+  max-width: 500px;
+  border-radius: 30px;
+  margin-right: 10px;
+  background-color: rgb(46, 44, 44);
+  color: white;
+  font-size: 0.8em;
+  padding: 10px;
+  height: 3em;
+  overflow: hidden;
+}
+
+
+.Mail-Bio {
+  padding: 10px 0px 30px 0px;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+.Mail-Btn {
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  border: none;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 25px;
+  margin: auto 0;
+  border: 1px solid white;
+  color: white;
+  background-color: black;
+}
+
+.Mail-Btn:hover {
+border: 1px solid white;
+color: black;
+background-color: white;
+cursor: pointer;
+transition: 300ms;
+}
+
+.Footer {
+height: fit-content;
+background-color: black;
+color: white;
+padding: 2px 1em;;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 100%;
+}
+
+.Socials-Footer{
+height: 100%;
+width: fit-content;
+display: flex;
+flex-direction: row;
+width: 40%;
+justify-content: end;
+}
+
+.Copyright {
+  font-size: 0.8em;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-a {
+
+}
+
