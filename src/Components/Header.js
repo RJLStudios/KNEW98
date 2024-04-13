@@ -1,4 +1,5 @@
 import './App.css';
+import { Link } from 'react-router-dom';
 import {
   motion,
   useTransform,
@@ -9,7 +10,7 @@ import {
 
 import { useRef,useEffect, useState } from "react";
 
-function Header() {
+function Header({ scrollToRef, videosRef,contactRef }) {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -74,8 +75,6 @@ function Header() {
     setIsOpen(!isOpen)
   }
 
-  
-
 
   return (
     <>
@@ -88,7 +87,7 @@ function Header() {
       animate='visible'
       transition={{ duration: 2, delay: 0.2 }}
       className='Header'>
-        <div className='Logo'>KNEW98</div>
+        <Link to='/'><div className='Logo'>KNEW98</div></Link>
 
         <div className='Progress-div'>
         <svg className="complete" width="60" height="60" viewport="0 0 100 100" xmlns="https://www.w3.org/2000/svg">
@@ -106,9 +105,9 @@ function Header() {
  
         <div className='Menu-icon'>
           <ul className='Responsive-links'>
-            <li className='Responsive-li hover-underline-animation'>ABOUT</li>
-            <li className='Responsive-li hover-underline-animation'>VIDEOS</li>
-            <li className='Responsive-li hover-underline-animation'>BOOKINGS</li>
+            <Link to='/About' className='hover-underline-animation'>ABOUT<li className=' '></li></Link>
+            <Link><li className=' hover-underline-animation' onClick={() => scrollToRef(videosRef)}>VIDEOS</li></Link>
+            <Link><li className='hover-underline-animation' onClick={() => scrollToRef(contactRef)}>BOOKINGS</li></Link>
           </ul>
         </div>
       </motion.div>

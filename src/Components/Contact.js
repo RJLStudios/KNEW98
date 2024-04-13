@@ -1,6 +1,7 @@
 import Window from './Images/WindowSill.jpg'
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { BsDisplay } from 'react-icons/bs';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -18,10 +19,12 @@ function Contact() {
   };
 
   const validateForm = () => {
+    console.log('Form Data:', formData);
     let errors = {};
     let formIsValid = true;
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if (!formData.name) {
+    if (formData.name.length < 1) {
       formIsValid = false;
       errors.name = 'Name is required';
     }
@@ -35,7 +38,7 @@ function Contact() {
       formIsValid = false;
       errors.message = 'Message is required';
     }
-   console.log(formIsValid)
+
     setErrors(errors);
     return formIsValid;
   };
@@ -66,11 +69,11 @@ function Contact() {
 
       <form className="Email-Form" onSubmit={handleSubmit}>
       <div className='CTA-Wrapper'>
-              <div class="Form-Outline">
-                <label class="form-label" for="formControlLg">
+              <div className="Form-Outline">
+                <label className="form-label" for="formControlLg">
                   YOUR NAME
                 </label>
-                <input
+                <textarea
                   type="text"
                   id="formControlLg"
                   className="form-control form-control-lg"
@@ -83,24 +86,25 @@ function Contact() {
 
 
               <div className='CTA-Wrapper'>
-              <div class="Form-Outline">
-                <label class="form-label" for="formControlDefault">
+              <div className="Form-Outline">
+                <label className="form-label" for="formControlDefault">
                   EMAIL ADDRESS
                 </label>
-                <input
-                  type="text"
+                <textarea
+                  type="email"
                   id="formControlDefault"
                   className="form-control"
                   name="email"
                   value={formData.email} 
                   onChange={handleChange} />
+                
               </div>
               <span className='Error'>{errors.email}</span>
               </div>
 
 <div className='CTA-Wrapper'>
-              <div class="Form-Outline">
-                <label class="form-label" for="textArea">
+              <div className="Form-Outline">
+                <label className="form-label" for="textArea">
                   YOUR MESSAGE
                 </label>
                 <textarea

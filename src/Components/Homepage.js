@@ -1,5 +1,6 @@
-import Header from './Header.js';
+
 import './App.css';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa";
 import { useRef,useEffect, useState } from "react";
 import Main from './Images/Main.jpg'
@@ -11,7 +12,30 @@ import {
   useAnimation,
 } from "framer-motion";
 
+import Header from '../Components/Header.js';
+import Featured from '../Components/Featured.js';
+import Videos from '../Components/Videos.js';
+import Events from '../Components/Events.js';
+import Merch from '../Components/Merch.js';
+import Contact from '../Components/Contact.js';
+import Mailing from '../Components/Mailing.js';
+import Footer from '../Components/Footer.js';
+
 function Homepage() {
+  const featuredRef = useRef(null);
+  const videosRef = useRef(null);
+  const eventsRef = useRef(null);
+  const merchRef = useRef(null);
+  const contactRef = useRef(null);
+  const mailingRef = useRef(null);
+
+  // Function to handle scrolling to a specific section
+  const scrollToRef = (ref) => {
+    window.scrollTo({
+      top: ref.current.offsetTop,
+      behavior: 'smooth'
+    });
+  };
 
   const animateRef = useRef(null);
   const isInView = useInView(animateRef, { once: true });
@@ -27,72 +51,89 @@ function Homepage() {
 
   return (
     <>
-      <div className='Homepage' 
-      style={{backgroundImage:`url(${Main})`,
+    <div className='App'>
+    <div className='Homepage'
+    style={{
+      backgroundImage: `url(${Main})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-  
+
     }}>
-        <Header/>
-        <div className='Homepage-Wrapper'>
-        <div className='Homepage-Content Margin'>
-        <div className='Text-Wrapper-Overflow'>  
-          <motion.div 
-           variants={{
-            hidden: { opacity: 0, y: 200 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate='visible'
-          transition={{ duration: 1.7, delay: 0.15 }}
-          className='Homepage-Socials'>
+
+    <Header
+      scrollToRef={scrollToRef}
+      videosRef={videosRef}
+      contactRef={contactRef}
+      />
+
+    <div className='Homepage-Wrapper'>
+      <div className='Homepage-Content Margin'>
+        <div className='Text-Wrapper-Overflow'>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 200 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate='visible'
+            transition={{ duration: 1.7, delay: 0.15 }}
+            className='Homepage-Socials'>
             <ul className='Socials'>
-            <a href='a'><li className='li'><FaInstagram/></li></a>
-            <a href='a'><li className='li'><FaYoutube/></li></a>
-            <a href='a'><li className='li'><FaSoundcloud/></li></a>
-            <a href='a'><li className='li'><FaSpotify/></li></a>
+              <a href='a'><li className='li'><FaInstagram /></li></a>
+              <a href='a'><li className='li'><FaYoutube /></li></a>
+              <a href='a'><li className='li'><FaSoundcloud /></li></a>
+              <a href='a'><li className='li'><FaSpotify /></li></a>
             </ul>
           </motion.div>
-          </div>
-          <div 
-          className='Text-Wrapper-Overflow'>   
-          <motion.div 
-          variants={{
-            hidden: { opacity: 0, y: 400 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate='visible'
-          transition={{ duration: 1.7, delay: 0.15 }}
-          className='Homepage-Header'>EXPERIENCE R&B <span className='Italic'>REIMAGINED</span> </motion.div>
-          </div>
-          <div className='Text-Wrapper-Overflow'> 
+        </div>
+        <div
+          className='Text-Wrapper-Overflow'>
           <motion.div
-           variants={{
-            hidden: { opacity: 0, y: 300 },
-            visible: { opacity: 1, y: 0 },
+            variants={{
+              hidden: { opacity: 0, y: 400 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate='visible'
+            transition={{ duration: 1.7, delay: 0.15 }}
+            className='Homepage-Header'>EXPERIENCE R&B <span className='Italic'>REIMAGINED</span> </motion.div>
+        </div>
+        <div className='Text-Wrapper-Overflow'>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 300 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate='visible'
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className='Homepage-Bio'>SOULFUL BEATS, RAW EMOTIONS & UNFORGETTABLE EXPERIENCES.</motion.div>
+        </div>
+      </div>
+      <div className='Text-Wrapper-Overflow'>
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
           }}
           initial="hidden"
           animate='visible'
-          transition={{ duration: 1.5, delay: 0.5}}
-           className='Homepage-Bio'>SOULFUL BEATS, RAW EMOTIONS & UNFORGETTABLE EXPERIENCES.</motion.div>
-           </div>
-        </div>  
-        <div className='Text-Wrapper-Overflow'> 
-        <motion.div
-         variants={{
-          hidden: { opacity: 0},
-          visible: { opacity: 1 },
-        }}
-        initial="hidden"
-        animate='visible'
-        transition={{ duration: 2, delay: 0.2 }}
-         className='Scroll-Prompt'>SCROLL FOR MORE</motion.div>
-        </div>
-        </div>
-        
-    
+          transition={{ duration: 2, delay: 0.2 }}
+     /*className='Scroll-Prompt'*/>
+          <ul className="menu align-center expanded text-center SMN_effect-31 Scroll-Prompt" onClick={() => scrollToRef(featuredRef)}>
+            <li className='No-List' ><a  data-hover="SCROLL DOWN" ><span>SCROLL DOWN</span></a></li></ul>
+        </motion.div>
       </div>
+    </div>
+  </div>
+  <section ref={featuredRef}><Featured /></section>
+  <section ref={videosRef}><Videos /></section>
+  <Events />
+  <Merch />
+  <section ref={contactRef}><Contact /></section>
+  <Mailing />
+  <Footer />
+  </div>
     </>
   )
 }
