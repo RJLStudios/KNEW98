@@ -105,7 +105,7 @@ function Header({ scrollToRef, videosRef,contactRef }) {
  
         <div className='Menu-icon'>
           <ul className='Responsive-links'>
-            <Link to='/About' className='hover-underline-animation'>ABOUT<li className=' '></li></Link>
+            <Link className='hover-underline-animation'><li className=' '></li></Link>
             <Link><li className=' hover-underline-animation' onClick={() => scrollToRef(videosRef)}>VIDEOS</li></Link>
             <Link><li className='hover-underline-animation' onClick={() => scrollToRef(contactRef)}>BOOKINGS</li></Link>
           </ul>
