@@ -1071,10 +1071,215 @@ justify-content: end;
   justify-content: center;
 }
 
-.About {
-  border: 1px solid green;
+
+.Bookings {
   background-color: black;
+  color: white;
  height: 100vh;
  width: 100%;
- color: white;
 }
+
+.Booking-Banner {
+  background-image: url(../Components/Images/Booking\ Banner.jpg);
+  background-repeat: 'no-repeat';
+  background-size: 'cover';
+  background-position: center;
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Booking-Wrapper {
+  width:fit-content;
+  height: fit-content;
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Booking-Header {
+  font-size: 5em;
+  letter-spacing: 3px;
+  font-weight: 600;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+
+.Booking-Border {
+  height: fit-content;
+  width: 80%;
+  border: 1px solid white;
+  margin: 1em 0em 2em 0em;
+}
+
+
+
+.Booking-Toggle-Div {
+  height: 4.5em;
+  width: 18em;
+  border-radius: 10px;
+  padding: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(209, 208, 208);
+}
+
+.Booking-Eng, .Booking-Artist{
+height: 100%;
+width: 47%;
+color: black;
+font-weight: 600;
+letter-spacing: 1px;
+border-radius: 5px ;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.Booking-Eng {
+  background-color: rgb(255, 255, 255);
+}
+
+
+.Services-Div {
+height: inherit;
+width: 100%;
+padding: 1em 2.5em;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+.Darkmode {
+  background-color: black;
+  color: white;
+}
+
+
+.Services-Title {
+height: fit-content;
+width: fit-content;
+margin-bottom: 2em;
+font-size: 2.5em;
+}
+
+.Services-Form-Wrapper {
+  width: 100%;
+  min-height: 400px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Services-Bio, .Services-Form {
+height: 100%;
+width: 49%;
+}
+
+.Services-Bio{
+display: flex;
+flex-direction: column;
+gap: 1.5em;
+
+}
+.Services-Form {
+border: 1px solid purple;
+}
+
+.Services-Quote {
+  font-size: 2.3em;
+}
+
+@media screen and (max-width:400px) {
+
+  .Booking-Border {
+    height: fit-content;
+    width: 80%;
+    border: 1px solid white;
+    margin:1em 0em;
+  }
+  
+  
+  .Booking-Toggle-Div {
+    height: 3em;
+    width: 18em;
+    border-radius: 10px;
+    padding: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(209, 208, 208);
+  }
+  
+  .Booking-Eng, .Booking-Artist{
+  height: 100%;
+  width: 47%;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 5px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .Booking-Eng {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  
+  .Services-Div {
+  height: inherit;
+  width: 100%;
+  padding: 1em 2.5em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 0.8em;
+  }
+  
+  .Services-Title {
+    margin: 0.5em 0em 1em 0em;
+  }
+
+  .Services-Quote {
+    font-size: 1.3em;
+  }
+  .Darkmode {
+    background-color: black;
+    color: white;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .Booking-Header {  
+    font-size:2.5em;
+
+    }
+    
+  .Services-Form-Wrapper {
+    flex-direction: column;
+  }
+  .Services-Bio, .Services-Form {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    }
+    
+  }
+
+@media screen and (max-width:1000px) {
+  .Services-Div {
+  padding: 1em 1em;
+    }
+}
+
