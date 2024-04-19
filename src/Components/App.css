@@ -1071,12 +1071,21 @@ justify-content: end;
   justify-content: center;
 }
 
-
 .Bookings {
-  background-color: black;
-  color: white;
  height: 100vh;
  width: 100%;
+ color: white;
+}
+.Dark {
+  background-color: black;
+  color: white;
+  transition: 500ms;
+}
+
+.Light {
+  background-color: white;
+  color: rgb(197, 193, 193);
+  transition: 500ms;
 }
 
 .Booking-Banner {
@@ -1129,7 +1138,8 @@ justify-content: end;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(209, 208, 208);
+  background-color: rgb(197, 193, 193);
+  margin-bottom: 1em;
 }
 
 .Booking-Eng, .Booking-Artist{
@@ -1142,25 +1152,34 @@ border-radius: 5px ;
 display: flex;
 justify-content: center;
 align-items: center;
+border: none;
+background-color: transparent;
+
 }
 
-.Booking-Eng {
-  background-color: rgb(255, 255, 255);
+.Booking-Eng:hover, .Booking-Artist:hover {
+  cursor: pointer;
 }
 
+.Active {
+background-color: white;
+transition: 1000ms;
+}
+
+.Inactive {
+  background-color: none;
+  transition: 1000ms;
+  
+
+}
 
 .Services-Div {
-height: inherit;
+height: 600px;
 width: 100%;
-padding: 1em 2.5em;
+padding: 3em 2.5em;
 display: flex;
 align-items: center;
 flex-direction: column;
-}
-
-.Darkmode {
-  background-color: black;
-  color: white;
 }
 
 
@@ -1192,12 +1211,16 @@ gap: 1.5em;
 
 }
 .Services-Form {
-border: 1px solid purple;
+
+padding: 0em 1em;
 }
 
 .Services-Quote {
-  font-size: 2.3em;
+  font-size: 1.7em;
+  letter-spacing: 1px;
 }
+
+
 
 @media screen and (max-width:400px) {
 
@@ -1217,7 +1240,7 @@ border: 1px solid purple;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(209, 208, 208);
+
   }
   
   .Booking-Eng, .Booking-Artist{
@@ -1232,13 +1255,10 @@ border: 1px solid purple;
   align-items: center;
   }
   
-  .Booking-Eng {
-    background-color: rgb(255, 255, 255);
-  }
-  
+
   
   .Services-Div {
-  height: inherit;
+  height: fit-content;
   width: 100%;
   padding: 1em 2.5em;
   display: flex;
@@ -1274,6 +1294,9 @@ border: 1px solid purple;
     width: 100%;
     text-align: center;
     }
+    .Services-Bio {
+      margin-bottom: 3em;
+    }
     
   }
 
@@ -1282,4 +1305,88 @@ border: 1px solid purple;
   padding: 1em 1em;
     }
 }
+
+.Bookings-Form {
+  font-size: 1.5em;
+  display: flex;
+   flex-direction: column;
+  gap: 0.7em;
+}
+.Services-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Bookings-Input {
+  border-radius: 20px;
+  width: 100%;
+  font-size: 1em;
+  padding: 5px;
+  border: none;
+  background-color: rgb(82, 82, 82);
+  margin-top: 7px;
+  color: white;
+}
+
+.Bookings-Form-Label {
+  margin: 1em 0em;
+}
+
+.Booking-Form-Btn {
+ width: fit-content;
+ font-size: 1em;
+ letter-spacing: 1.5px;
+ border-radius: 30px;
+ padding: 10px 15px;
+ margin: 0 auto;
+ margin-bottom: 2em;
+ background-color: black;
+ color: white;
+ border: 1px solid white;
+ transition: 400ms;
+}
+
+.Btn-Dark {
+  color: white;
+  border: 1px solid white;
+  background-color: black;
+  width: fit-content;
+ font-size: 1em;
+ letter-spacing: 1.5px;
+ border-radius: 30px;
+ padding: 10px 15px;
+ margin: 0 auto;
+ margin-bottom: 2em;
+ transition: 400ms;
+}
+
+.Btn-Dark:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  transition: 400ms;
+  cursor: pointer;
+}
+
+.Btn-Light {
+  color: rgb(197, 193, 193);
+  border: 1px solid rgb(197, 193, 193);
+  width: fit-content;
+ font-size: 1em;
+ letter-spacing: 1.5px;
+ border-radius: 30px;
+ padding: 10px 15px;
+ margin: 0 auto;
+ margin-bottom: 2em;
+ transition: 400ms;
+}
+
+.Btn-Light:hover {
+  color: rgb(117, 117, 117);
+  border: 1px solid rgb(117, 117, 117);
+  transition: 400ms;
+  cursor: pointer;
+}
+
+
 
