@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/RJLStudios/KNEW98/static/css/main.4145b576.css",
+    "main.js": "/RJLStudios/KNEW98/static/js/main.40f17f11.js",
+    "static/media/Main.jpg": "/RJLStudios/KNEW98/static/media/Main.9b89b30b785325bd6332.jpg",
+    "static/media/WindowSill.jpg": "/RJLStudios/KNEW98/static/media/WindowSill.06cfb3227f7e944e0ec0.jpg",
+    "static/media/Booking Banner.jpg": "/RJLStudios/KNEW98/static/media/Booking Banner.79d815a497ebf543bdcb.jpg",
+    "static/media/CaramelTape(2).jpg": "/RJLStudios/KNEW98/static/media/CaramelTape(2).a6fb9270ec9d5c0f550f.jpg",
+    "static/media/Events.jpg": "/RJLStudios/KNEW98/static/media/Events.b01d3d56010002a55ed7.jpg",
+    "static/media/Events2.jpg": "/RJLStudios/KNEW98/static/media/Events2.05a8074faf25e2e6c867.jpg",
+    "static/media/Events3.jpg": "/RJLStudios/KNEW98/static/media/Events3.73558019b56ea9d32682.jpg",
+    "index.html": "/RJLStudios/KNEW98/index.html",
+    "main.4145b576.css.map": "/RJLStudios/KNEW98/static/css/main.4145b576.css.map",
+    "main.40f17f11.js.map": "/RJLStudios/KNEW98/static/js/main.40f17f11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4145b576.css",
+    "static/js/main.40f17f11.js"
+  ]
+}
