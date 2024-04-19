@@ -1,9 +1,10 @@
-import React from 'react';
+
+import emailjs from 'emailjs-com';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import BookingBanner from '../Images/Booking Banner.jpg'
 import Header from '../Header';
 import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa";
-import { useRef, useEffect, useState } from "react";
+import { React, useState } from "react";
 import {
     motion,
     useInView,
@@ -17,8 +18,6 @@ function Bookings() {
         const [activeButton2, setActiveButton2] = useState('Inactive');
         const [quote, setQuote] = useState('Engineer-Quote')
         
-
- 
         const toggleTheme = () => {
             const newTheme = theme === 'Dark' ? 'Light' : 'Dark';
             setTheme(newTheme);
@@ -27,8 +26,59 @@ function Bookings() {
             setQuote (quote === 'Engineer-Quote' ? 'Artist-Quote' : 'Engineer-Quote' )
         }
 
+        const [formData, setFormData] = useState({
+            name: '',
+            email: '',
+            message: ''
+          });
+          const [errors, setErrors] = useState({});
+        
+          const handleChange = (e) => {
+            setFormData({
+              ...formData,
+              [e.target.name]: e.target.value
+            });
+          };
+        
+          const validateForm = () => {
+            console.log('Form Data:', formData);
+            let errors = {};
+            let formIsValid = true;
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        
+            if (formData.name.length < 1) {
+              formIsValid = false;
+              errors.name = 'Name is required';
+            }
+        
+            if (!formData.email) {
+              formIsValid = false;
+              errors.email = 'Email is required';
+            }
+        
+            if (!formData.message) {
+              formIsValid = false;
+              errors.message = 'Message is required';
+            }
+        
+            setErrors(errors);
+            return formIsValid;
+          };
+        
+          const handleSubmit = (e) => {
+            e.preventDefault();
+            if (validateForm()) {
+              emailjs.sendForm('service_f51xyhp', 'template_l1i5pta', e.target, 'ATtn1deBhV3vWzT70')
+                .then((result) => {
+                  console.log(result.text);
+                  alert('Message sent successfully!');
+                }, (error) => {
+                  console.log(error.text);
+                  alert('An error occurred. Please try again later.');
+                });
+            }
 
-  
+        }
     return (
         <div className='Bookings'>
             <Header />
@@ -59,15 +109,15 @@ function Bookings() {
                         <form className='Bookings-Form'>
                             <div className='Form-Wrap'>
                             <label className='Bookings-Form-Label'> NAME</label>
-                            <input className='Bookings-Input'></input>
+                            <input 
+                            className='Bookings-Input'
+                            ></input>
                             </div>
                             <div className='Form-Wrap'>
                             <label className='Bookings-Form-Label'> EMAIL</label>
-                            <input className='Bookings-Input'></input>
-                            </div>
-                            <div className='Form-Wrap'>
-                            <label className='Bookings-Form-Label'> SUBJECT</label>
-                            <input className='Bookings-Input'></input>
+                            <input
+                            className='Bookings-Input'>
+                              </input>
                             </div>
                             <div className='Form-Wrap'>
                             <label className='Bookings-Form-Label'> MESSAGE</label>
