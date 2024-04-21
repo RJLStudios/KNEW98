@@ -59,10 +59,28 @@ function Events() {
           <div class="tour-btn-div">
             <div class="tour-btn tba">TICKETS</div>
           </div>
+        
         </div>
-      </div>
+
+      </div> 
+       <div className='Border Event-Border-Margin'>
+                <motion.div 
+        className="Border-Fill"
+        ref={animateRef}
+       variants={{
+          visible: { scaleX:1},
+          hidden: { scaleX:0 }
+        }}
+        transition={{
+          duration: 0.8,
+          ease: 'linear'
+        }} animate={mainControls}
+        initial="hidden"
+        ></motion.div>
+                </div>
 
         </div>
+        
       </div>
     </>
   )

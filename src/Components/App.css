@@ -51,10 +51,11 @@ height: fit-content;
   display: flex;
   flex-direction: column;
   color: white;
+  background-color: rgb(185, 184, 184);
   background-position: bottom;
   }
 
-.Header {
+.Header-visible{
  height: 65px;
  position: fixed;
  top: 0;
@@ -66,8 +67,25 @@ height: fit-content;
  z-index: 5;
  justify-content: space-between;
  padding: 0 1em;
- 
+ transform: translateY(0);
 }
+
+.Header-hidden {
+  height: 65px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: 400ms;
+  flex-direction: row;
+  z-index: 5;
+  justify-content: space-between;
+  padding: 0 1em;
+  transform: translateY(-100%);
+}
+
+
 
 .Logo{
 height: 100%;
@@ -116,15 +134,10 @@ width: 40vw;
 }
 
 
-.li {
-  list-style-type: none;
-  text-align: none;
-
-}
-
 li:hover {
 color: grey;
 cursor: pointer;
+
 }
 
 a{
@@ -166,10 +179,23 @@ margin: 0 auto 0 0;
 .Socials {
   height: 100%;
   width: 100%;
-  font-size: 1.3em;
   display: flex;
-  justify-content: space-evenly;
+width: fit-content;
+gap: 0.4em;
 }
+
+
+.li-icon {
+  list-style-type: none;
+  text-align: none;
+  font-size: 1.2em;
+}
+@media screen and (max-width:500px) {
+.li-icon {
+  font-size: 0.7em;
+}
+}
+
 
 .Homepage-Header {
   font-size: 5.5em;
@@ -491,11 +517,12 @@ flex-direction: row-reverse;
 .Border{
   width: 100%;
   height: 0.5px;
-  /*border-bottom: 0.5px solid var(--primary-cream);*/
   margin: 4em auto;
   position: relative;
- 
+}
 
+.Booking-Border-Margin {
+  margin: 1.5em auto 2em auto ;
 }
 
 .Border-Fill {
@@ -538,7 +565,7 @@ flex-direction: column;
 
   .Video-Wrapper {
     height: fit-content;
-    width: 80vw;
+    width: 90vw;
     display: flex;
     flex-direction: column-reverse;
   }
@@ -569,66 +596,24 @@ flex-direction: column;
 }
 
 
-
-
-
 .Progress-div {
-height: fit-content;
-border: 1px solid;
+height: 2.3em;
+width: 2.3em;
 display: flex;
 margin: auto;
 justify-content: center;
 align-items: center;
 flex-flow: row;
+border: none;
 }
 
-
-.Progress-div:before {
-  content: "";
-  position: fixed;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 125vmax;
-  height: 125vmax;
-  border-radius: 100%;
-  background-image: linear-gradient(to top, white 0%, white 100%);
-  box-shadow: 0 0 20px white;
-  transition: all 500ms cubic-bezier(.49,.23,0,.99) ;
-  opacity: 0;
-
+@media screen and (max-width: 500px) {
+  .Progress-div {
+    height: 1.9em;
+width: 1.9em;
+  }
 }
 
-.completed:before{
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 0.5;
-}
-
-svg {
-  display: none;
-  position: sticky;
-  transform: rotate(-90deg);
-}
-
-svg circle {
-  stroke: rgba(0,0,0,0.1);
-  stroke-width: 14px;
-  stroke-linecap: round;
-  fill: transparent;
-}
-
-svg .progress-bar {
-  stroke: url(#grad);
-  transition: stroke-dashoffset 0 ease-in-out; 
-  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
-}
-
-.pct {
-  position: fixed;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-feature-settings: "tnum"; 
-  font-variant-numeric: tabular-nums;
-}
 
 
 .Events {
@@ -715,7 +700,7 @@ font-size: 7rem;
   width: 100%;
   justify-content: center;
   font-size: 30px;
-  border-bottom: 1px solid white;
+
 }
 
 .date-wrapper {
@@ -725,6 +710,10 @@ font-size: 7rem;
   align-items: center;
   height: 100%;
   padding-bottom: 10px;
+}
+
+.Event-Border-Margin {
+  margin: 1em 0em;
 }
 
 .date {
@@ -772,25 +761,22 @@ height: 100%;
 
 
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
   .Events {
     padding: 2em 0em;
   }
   .Events-Banner {
-    width: 80vw;
-    height: 30vh;
+    width: 90vw;
+    height: 35vh;
     display:flex;
-    align-items: end;
     border-radius: 30px;
   }
   
   .Banner-Text {
     height: 100%;
     width: 100%;
-    font-size: 5em;
+    font-size: 6em;
   }
-
-  
 
 .tour-dates {
   height: fit-content;
@@ -835,7 +821,6 @@ margin: 20px 0px ;
   font-size: 5em;
   height: fit-content;
   padding: 0.5em 0em;
-
   display: flex;
   justify-content: center;
 
@@ -856,18 +841,15 @@ width: 50%;
 .Contact-Form {
 height: 100%;
 width: 50%;
-padding: 5em;
-font-size: 1.2em;
-font-weight: 100;
+padding: 3em;
+font-size: 1.5em;
+font-weight: 600;
 }
 
-.Form-Outline {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
 .form-label {
   width: 100px;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
 
 }
 
@@ -875,29 +857,6 @@ font-weight: 100;
   height: fit-content;
   display: flex;
   flex-direction: column;
-}
-
-.Email-Form {
-  width: 100%;
-  height: 80%;
-
-}
-.form-control {
-width: 80%;
-font-size: 0.8em;
-background-color: rgb(46, 44, 44);
-box-shadow: none;
-border: none;
-border-radius: 20px;
-color: white;
-padding: 15px;
-overflow: hidden;
-border: 1px solid grey;
-}
-
-.form-control-sm {
-  height: 100%;
-  
 }
 
 .Error {
@@ -1120,6 +1079,8 @@ justify-content: end;
   display: flex;
   justify-content: center;
   margin-top: 0.5em;
+  overflow: hidden;
+  height: fit-content;
 }
 
 .Booking-Border {
@@ -1218,7 +1179,7 @@ padding: 0em 1em;
 
 .Services-Quote {
   font-size: 1.7em;
-  letter-spacing: 1px;
+  letter-spacing:1.5px;
 }
 
 
@@ -1322,15 +1283,21 @@ padding: 0em 1em;
   border-radius: 20px;
   width: 100%;
   font-size: 1em;
-  padding: 5px;
+  padding: 5px 15px;
   border: none;
-  background-color: rgb(82, 82, 82);
+  background-color: rgb(46, 44, 44);
   margin-top: 7px;
   color: white;
+  border: 0.2px solid rgb(173, 172, 172);
 }
 
 .Bookings-Form-Label {
-  margin: 1em 0em;
+ margin: 0.25em 0em;
+  height: fit-content;
+}
+
+.Form-Wrap{
+  margin: 0.25em 0em ;
 }
 
 .Booking-Form-Btn {
@@ -1388,6 +1355,4 @@ padding: 0em 1em;
   transition: 400ms;
   cursor: pointer;
 }
-
-
 

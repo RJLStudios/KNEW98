@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import './Components/App.css';
 /*import About from './Components/Pages/About.js'*/
 import Homepage from './Components/Homepage.js';
@@ -18,6 +19,9 @@ import {
 
 
 function App() {
+
+  const location = useLocation();
+
   const featuredRef = useRef(null);
   const videosRef = useRef(null);
   const eventsRef = useRef(null);

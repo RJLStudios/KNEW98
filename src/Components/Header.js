@@ -1,38 +1,12 @@
 import './App.css';
 import { Link } from 'react-router-dom';
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useInView,
-  useAnimation,
-} from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import { useRef, useEffect, useState } from "react";
 
-import { useRef,useEffect, useState } from "react";
+function Header() {
 
-function Header({ scrollToRef, videosRef,contactRef }) {
-  const [scrollPercentage, setScrollPercentage] = useState(0);
-
-  useEffect(() => {
-
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollY = window.scrollY;
-
-      const scrollPercent = (scrollY / (documentHeight - windowHeight)) * 100;
-
-      setScrollPercentage(scrollPercent)
-      console.log(scrollPercent);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, []);
-
+  //FRAMER MOTION BOILERPLATE
   const animateRef = useRef(null);
   const isInView = useInView(animateRef, { once: true });
 
@@ -44,65 +18,73 @@ function Header({ scrollToRef, videosRef,contactRef }) {
     }
   }, [isInView]);
 
-
-  const [opacity, setOpacity] = useState(false)
-  const changeOpacity = () => {
-    if (window.innerWidth >= 700 && window.scrollY >= 90) {
-      setOpacity(true)
-    } else {
-      setOpacity(false)
-    }
-  }
-
-  const [isOpen, setIsOpen] = useState(true);
-  const [menuIcon, setMenuIcon] = useState(false);
-
+  //PROGRESS ICON FUNCTION
+  const [scrollProgressPercentage, setScrollProgressPercentage] = useState(0);
   useEffect(() => {
-    const handleResize = () => {
-      setMenuIcon(window.innerWidth <= 900);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    const handleScrollProgress = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setScrollProgressPercentage(scrollProgress);
+    }
+    window.addEventListener('scroll', handleScrollProgress);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScrollProgress);
+    };
+  })
+  //HIDE NAVBAR ON SCROLL 
+  const [navbarClass, setNavbarClass] = useState('Header-visible');
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrollingDown = currentScrollPos > prevScrollPos;
+
+      if (isScrollingDown && navbarClass === 'Header-visible') {
+        setNavbarClass('Header-hidden');
+      } else if (!isScrollingDown && currentScrollPos > 0) {
+        setNavbarClass('Header-visible');
+      }
+
+      setPrevScrollPos(currentScrollPos);
     };
 
-  }, []);
+    window.addEventListener('scroll', handleScroll);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen)
-  }
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos, navbarClass]);
 
 
   return (
     <>
-      <motion.div 
-      variants={{
-        hidden: { opacity: 0},
-        visible: { opacity: 1 },
-      }}
-      initial="hidden"
-      animate='visible'
-      transition={{ duration: 2, delay: 0.2 }}
-      className='Header'>
+      <motion.div
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        initial="hidden"
+        animate='visible'
+        transition={{ duration: 2, delay: 0.2 }}
+        className={navbarClass}>
+
         <Link to='/'><div className='Logo'>KNEW98</div></Link>
 
         <div className='Progress-div'>
-        <svg className="complete" width="60" height="60" viewport="0 0 100 100" xmlns="https://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="grad">
-      <stop offset="0%" stop-color=" #FFFFFF"></stop>
-      <stop offset="100%" stop-color=" #FFFFFF"></stop>
-    </linearGradient>
-    </defs>
-    <circle cx="25" cy="25" r="20"></circle>
-    <circle className="progress-bar" cx="25" cy="25" r="20"></circle>
-  </svg>
- 
+          <CircularProgressbar
+            value={scrollProgressPercentage}
+            strokeWidth={30}
+            styles={buildStyles({
+              pathColor: "white",
+              trailColor: "#989898",
+              strokeLinecap: "butt"
+            })} />
         </div>
- 
+
         <div className='Menu-icon'>
           <ul className='Responsive-links'>
             <Link to="/Bookings" className='hover-underline-animation'>BOOKINGS</Link>

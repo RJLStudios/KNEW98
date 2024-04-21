@@ -69,53 +69,50 @@ function Contact() {
 
       <form className="Email-Form" onSubmit={handleSubmit}>
       <div className='CTA-Wrapper'>
-              <div className="Form-Outline">
-                <label className="form-label" for="formControlLg">
+                <label className='Bookings-Form-Label' for="formControlLg">
                   YOUR NAME
                 </label>
-                <textarea
+                <input
                   type="text"
                   id="formControlLg"
-                  className="form-control form-control-lg"
+                  className='Bookings-Input'
                   name="name"
                   value={formData.name} 
+                  placeholder='YOUR NAME'
                   onChange={handleChange} />
-              </div>
               <span className='Error'>{errors.name}</span>
               </div>
 
 
               <div className='CTA-Wrapper'>
-              <div className="Form-Outline">
-                <label className="form-label" for="formControlDefault">
+                <label className="Bookings-Form-Label" for="formControlDefault">
                   EMAIL ADDRESS
                 </label>
-                <textarea
+                <input
                   type="email"
                   id="formControlDefault"
-                  className="form-control"
+                  className='Bookings-Input'
                   name="email"
                   value={formData.email} 
-                  onChange={handleChange} />
-                
-              </div>
+                  placeholder='YOUR EMAIL'
+                  onChange={handleChange} />    
               <span className='Error'>{errors.email}</span>
               </div>
 
 <div className='CTA-Wrapper'>
-              <div className="Form-Outline">
-                <label className="form-label" for="textArea">
+                <label className="Bookings-Form-Label" for="textArea">
                   YOUR MESSAGE
                 </label>
                 <textarea
                   type="text"
                   id="formControlSm"
-                  className="form-control form-control-sm"
+                  className='Bookings-Input'
                   rows="4"
                   name="message"
                   value={formData.message} 
+                  placeholder='YOUR MESSAGE'
                   onChange={handleChange} />
-              </div>
+            
               <span className='Error'>{errors.message}</span>
               </div>
 

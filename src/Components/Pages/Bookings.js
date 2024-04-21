@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import BookingBanner from '../Images/Booking Banner.jpg'
 import Header from '../Header';
 import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa";
-import { React, useState } from "react";
+import { React, useState, useRef, useEffect } from "react";
 import {
     motion,
     useInView,
+    useAnimation
 } from "framer-motion";
+
 
 
 function Bookings() {
@@ -79,23 +81,64 @@ function Bookings() {
             }
 
         }
+
+        const animateRef = useRef(null);
+        const isInView = useInView(animateRef, { once: true });
+      
+        const mainControls = useAnimation();
+      
+        useEffect(() => {
+          if (isInView) {
+            mainControls.start("visible");
+          }
+        }, [isInView]);
     return (
         <div className='Bookings'>
             <Header />
             <div className='Booking-Banner'
               >
                 <div className='Booking-Wrapper'>
-                <div className='Booking-Header'>BOOK A SESSION</div>
-                <div className='Booking-Border'></div>
+                <div
+          className='Text-Wrapper-Overflow'>
+                <motion.div 
+             ref={animateRef}
+             variants={{
+                visible: { opacity:1, y:0},
+                hidden: {  opacity:0, y:100 }
+              }}
+              transition={{
+                duration:0.6,
+                ease: 'easeOut'
+              }} animate={mainControls}
+              initial="hidden" 
+                className='Booking-Header'>BOOK A SESSION</motion.div>
+                </div>
+                <div className='Border Booking-Border-Margin'>
+                <motion.div 
+        className="Border-Fill"
+        ref={animateRef}
+       variants={{
+          visible: { scaleX:1},
+          hidden: { scaleX:0 }
+        }}
+        transition={{
+          duration: 0.8,
+          ease: 'linear'
+        }} animate={mainControls}
+        initial="hidden"
+        ></motion.div>
+                </div>
                 <div className='Booking-Toggle-Div'>
-                    <button onClick={toggleTheme}  onTouchStart={toggleTheme} className={`Booking-Eng ${activeButton1 === 'Active' ? 'Active' : ''}`}>ENGINEERING</button>
-                    <button onClick={toggleTheme}  onTouchStart={toggleTheme} className={`Booking-Artist ${activeButton2 === 'Active' ? 'Active' : ''}`}>ARTIST</button>
+                    <button onClick={toggleTheme}  onTouchStart={toggleTheme} className={`Booking-Eng ${activeButton1 === 'Active' ? 'Active' : ''}`}>ENGINEERING SESSIONS</button>
+                    <button onClick={toggleTheme}  onTouchStart={toggleTheme} className={`Booking-Artist ${activeButton2 === 'Active' ? 'Active' : ''}`}>BOOK A SHOW</button>
                 </div>
                 </div>
             </div>
 
             <div className={`Services-Div ${theme}`}>
-                <div className='Services-Title'>ENGINEERING SERVICES</div>
+                <div className='Services-Title'>
+                {activeButton1 === 'Active' ? "ENGINEERING SERVICES" : "SHOW BOOKINGS"}
+                </div>
                 <div className='Services-Form-Wrapper'>
                     <div className='Services-Bio'>
                         <p className='Services-Quote'>
@@ -111,17 +154,20 @@ function Bookings() {
                             <label className='Bookings-Form-Label'> NAME</label>
                             <input 
                             className='Bookings-Input'
+                            placeholder='YOUR NAME'
                             ></input>
                             </div>
                             <div className='Form-Wrap'>
                             <label className='Bookings-Form-Label'> EMAIL</label>
                             <input
-                            className='Bookings-Input'>
+                            className='Bookings-Input'
+                            placeholder='YOUR EMAIL'>
                               </input>
                             </div>
                             <div className='Form-Wrap'>
                             <label className='Bookings-Form-Label'> MESSAGE</label>
-                            <textarea className='Bookings-Input'></textarea>
+                            <textarea className='Bookings-Input'
+                               placeholder='YOUR MESSAGE'></textarea>
                             </div>
                             <input className={activeButton1 === 'Active' ? "Btn-Dark" : "Btn-Light"} type="submit" value="SEND" />
                            
