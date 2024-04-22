@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.f4ef7e26.css",
-    "main.js": "/static/js/main.fecb4379.js",
-    "static/media/Main.jpg": "/static/media/Main.349791fc75f27582e0e7.jpg",
-    "static/media/Booking Banner.jpg": "/static/media/Booking Banner.79d815a497ebf543bdcb.jpg",
-    "static/media/CaramelTape(2).jpg": "/static/media/CaramelTape(2).a6fb9270ec9d5c0f550f.jpg",
-    "static/media/Events.jpg": "/static/media/Events.b01d3d56010002a55ed7.jpg",
-    "static/media/WindowSill.jpg": "/static/media/WindowSill.7dbb18122e54c7587851.jpg",
-    "index.html": "/index.html",
-    "main.f4ef7e26.css.map": "/static/css/main.f4ef7e26.css.map",
-    "main.fecb4379.js.map": "/static/js/main.fecb4379.js.map"
+    "main.css": "/KNEW98/static/css/main.5ebab2b6.css",
+    "main.js": "/KNEW98/static/js/main.5e7ce688.js",
+    "static/media/Main.jpg": "/KNEW98/static/media/Main.349791fc75f27582e0e7.jpg",
+    "static/media/Booking Banner.jpg": "/KNEW98/static/media/Booking Banner.79d815a497ebf543bdcb.jpg",
+    "static/media/CaramelTape(2).jpg": "/KNEW98/static/media/CaramelTape(2).a6fb9270ec9d5c0f550f.jpg",
+    "static/media/Events.jpg": "/KNEW98/static/media/Events.b01d3d56010002a55ed7.jpg",
+    "static/media/WindowSill.jpg": "/KNEW98/static/media/WindowSill.7dbb18122e54c7587851.jpg",
+    "index.html": "/KNEW98/index.html",
+    "main.5ebab2b6.css.map": "/KNEW98/static/css/main.5ebab2b6.css.map",
+    "main.5e7ce688.js.map": "/KNEW98/static/js/main.5e7ce688.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4ef7e26.css",
-    "static/js/main.fecb4379.js"
+    "static/css/main.5ebab2b6.css",
+    "static/js/main.5e7ce688.js"
   ]
 }
