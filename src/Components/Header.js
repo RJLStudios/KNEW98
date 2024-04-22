@@ -70,7 +70,7 @@ function Header() {
         initial="hidden"
         animate='visible'
         transition={{ duration: 2, delay: 0.2 }}
-        className={navbarClass}>
+        className='Header-visible'>
 
         <Link to='/'><div className='Logo'>KNEW98</div></Link>
 

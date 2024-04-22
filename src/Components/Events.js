@@ -1,7 +1,4 @@
 import Banner from './Images/Events.jpg'
-import Banner2 from './Images/Events2.jpg'
-import Banner3 from './Images/Events3.jpg'
-
 import { useRef,useEffect, useState } from "react";
 import {
   motion,

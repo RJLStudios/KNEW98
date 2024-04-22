@@ -47,13 +47,12 @@ function Homepage() {
   return (
     <>
       <div className='App'>
-        <div className='Homepage'
-          style={{
-            backgroundImage: `url(${Main})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-          }}>
-
+        <div className='Homepage'>
+         <img 
+         className='Homepage-Background' 
+         src={Main}
+         decoding='async'
+         fetchPriority='high'></img>
           <Header scrollToRef={scrollToRef} videosRef={videosRef} contactRef={contactRef} />
           <div className='Homepage-Wrapper'>
             <div className='Homepage-Content Margin'>

@@ -29,58 +29,57 @@ function Bookings() {
         }
 
         const [formData, setFormData] = useState({
-            name: '',
-            email: '',
-            message: ''
+          name: '',
+          email: '',
+          message: ''
+        });
+        const [errors, setErrors] = useState({});
+      
+        const handleChange = (e) => {
+          setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
           });
-          const [errors, setErrors] = useState({});
-        
-          const handleChange = (e) => {
-            setFormData({
-              ...formData,
-              [e.target.name]: e.target.value
-            });
-          };
-        
-          const validateForm = () => {
-            console.log('Form Data:', formData);
-            let errors = {};
-            let formIsValid = true;
-            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        
-            if (formData.name.length < 1) {
-              formIsValid = false;
-              errors.name = 'Name is required';
-            }
-        
-            if (!formData.email) {
-              formIsValid = false;
-              errors.email = 'Email is required';
-            }
-        
-            if (!formData.message) {
-              formIsValid = false;
-              errors.message = 'Message is required';
-            }
-        
-            setErrors(errors);
-            return formIsValid;
-          };
-        
-          const handleSubmit = (e) => {
-            e.preventDefault();
-            if (validateForm()) {
-              emailjs.sendForm('service_f51xyhp', 'template_l1i5pta', e.target, 'ATtn1deBhV3vWzT70')
-                .then((result) => {
-                  console.log(result.text);
-                  alert('Message sent successfully!');
-                }, (error) => {
-                  console.log(error.text);
-                  alert('An error occurred. Please try again later.');
-                });
-            }
-
-        }
+        };
+      
+        const validateForm = () => {
+          console.log('Form Data:', formData);
+          let errors = {};
+          let formIsValid = true;
+          var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      
+          if (formData.name.length < 1) {
+            formIsValid = false;
+            errors.name = 'Name is required';
+          }
+      
+          if (!formData.email) {
+            formIsValid = false;
+            errors.email = 'Email is required';
+          }
+      
+          if (!formData.message) {
+            formIsValid = false;
+            errors.message = 'Message is required';
+          }
+      
+          setErrors(errors);
+          return formIsValid;
+        };
+      
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          if (validateForm()) {
+            emailjs.sendForm('service_f51xyhp', 'template_l1i5pta', e.target, 'ATtn1deBhV3vWzT70')
+              .then((result) => {
+                console.log(result.text);
+                alert('Message sent successfully!');
+              }, (error) => {
+                console.log(error.text);
+                alert('An error occurred. Please try again later.');
+              });
+          }
+        };
 
         const animateRef = useRef(null);
         const isInView = useInView(animateRef, { once: true });
@@ -92,11 +91,17 @@ function Bookings() {
             mainControls.start("visible");
           }
         }, [isInView]);
+        
     return (
         <div className='Bookings'>
             <Header />
-            <div className='Booking-Banner'
-              >
+            <div className='Booking-Banner'>
+            <img 
+         className='Homepage-Background Banner-Img' 
+         src={BookingBanner}
+         loading='lazy'
+         decoding='async'
+         fetchPriority='high'></img>
                 <div className='Booking-Wrapper'>
                 <div
           className='Text-Wrapper-Overflow'>
@@ -137,38 +142,55 @@ function Bookings() {
 
             <div className={`Services-Div ${theme}`}>
                 <div className='Services-Title'>
-                {activeButton1 === 'Active' ? "ENGINEERING SERVICES" : "SHOW BOOKINGS"}
+                {activeButton1 === 'Active' ? "ENGINEER SERVICES" : "SHOW BOOKINGS"}
                 </div>
                 <div className='Services-Form-Wrapper'>
                     <div className='Services-Bio'>
                         <p className='Services-Quote'>
-                        {activeButton1 === 'Active' ? "I’M AN AUDIO ENGINEER AND AUDIOPHILE TOTALLING 5 YEARS EXPERIENCE RECORDING AND MIXING MUSIC." : "I’M AN ARTIST WITH A PASSION FOR CREATING VISUAL MASTERPIECES AND SHARING MY CRAFT WITH THE WORLD."}
+                        {activeButton1 === 'Active' ? "I'M AN AUDIO ENGINEER AND AUDIOPHILE TOTALLING 5 YEARS EXPERIENCE RECORDING AND MIXING MUSIC." : "WANT ME TO PERFORM AT YOUR PARTY OR EVENT?"}
                         </p>
                         <p className='Services-Quote'>
-                        {activeButton1 === 'Active' ? "MIXING AND MASTERING SERVICES THAT GIVE YOU THE RADIO-READY RESULT YOU'VE BEEN SEARCHING FOR." : "I OFFER CUSTOM ARTWORK CREATION, FROM LOGO DESIGN TO FULL ALBUM COVERS, TO BRING YOUR VISION TO LIFE."}
+                        {activeButton1 === 'Active' ? "MIXING AND MASTERING SERVICES THAT GIVE YOU THE RADIO-READY RESULT YOU'VE BEEN SEARCHING FOR." : " TELL ME ALL ABOUT IT AND I'LL SEND A QUOTE."}
                             </p>
                     </div>
                     <div className='Services-Form'>
-                        <form className='Bookings-Form'>
-                            <div className='Form-Wrap'>
+                        <form className='Bookings-Form' onSubmit={handleSubmit}>
+                            <div className='Form-Wrap' >
                             <label className='Bookings-Form-Label'> NAME</label>
                             <input 
+                            name='name'
+                            type='text'
                             className='Bookings-Input'
                             placeholder='YOUR NAME'
+                            value={formData.name}
+                            onChange={handleChange}
                             ></input>
+                            <span className='Error'>{errors.name}</span>
+
                             </div>
                             <div className='Form-Wrap'>
                             <label className='Bookings-Form-Label'> EMAIL</label>
                             <input
+                            name='email'
+                             type='email'
                             className='Bookings-Input'
-                            placeholder='YOUR EMAIL'>
+                            placeholder='YOUR EMAIL'
+                            value={formData.email}
+                            onChange={handleChange}>
                               </input>
+                            <span className='Error'>{errors.email}</span>
                             </div>
                             <div className='Form-Wrap'>
                             <label className='Bookings-Form-Label'> MESSAGE</label>
                             <textarea className='Bookings-Input'
-                               placeholder='YOUR MESSAGE'></textarea>
+                            name='message'
+                             type='message'
+                               placeholder='YOUR MESSAGE'
+                               value={formData.message}
+                               onChange={handleChange}></textarea>
+                            <span className='Error'>{errors.message}</span>
                             </div>
+                            
                             <input className={activeButton1 === 'Active' ? "Btn-Dark" : "Btn-Light"} type="submit" value="SEND" />
                            
                            
@@ -185,6 +207,6 @@ function Bookings() {
     </div>
         </div>
     );
-}
+  }
 
 export default Bookings;
