@@ -1,8 +1,7 @@
-import { useRef,useEffect, useState } from "react";
+import { useRef,useEffect} from "react";
 import {
   motion,
-  useTransform,
-  useScroll,
+
   useAnimation,
   useInView
 } from "framer-motion";
@@ -28,7 +27,7 @@ function Videos() {
       className='Videos'
        >
         <div className='Video-Wrapper'>
-          <div className='Video-Frame'><iframe width="100%" height="100%" src="https://www.youtube.com/embed/W2j7npQhHiU?si=tNzypscns54e3jWt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div className='Video-Frame'><iframe width="100%" height="100%" src="https://www.youtube.com/embed/W2j7npQhHiU?si=tNzypscns54e3jWt" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
           <div className="Video-Desc">
             <div className='Text-Wrapper-Overflow'>
             <motion.div
@@ -74,7 +73,7 @@ function Videos() {
       </div>
 
         <div className='Video-Wrapper Reverse'>
-          <div className='Video-Frame'><iframe width="100%" height="100%" src="https://www.youtube.com/embed/10kTyWCLeno?si=_fEvpP9ZHnJRAML5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <div className='Video-Frame'><iframe width="100%" height="100%" src="https://www.youtube.com/embed/10kTyWCLeno?si=_fEvpP9ZHnJRAML5" title="Skrrting By Video Frame" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
           <div className="Video-Desc">
           <div className='Text-Wrapper-Overflow'>
             <motion.div

@@ -18,10 +18,8 @@ function Homepage() {
   // FUNCTION FOR REF SCROLLING
   const featuredRef = useRef(null);
   const videosRef = useRef(null);
-  const eventsRef = useRef(null);
-  const merchRef = useRef(null);
   const contactRef = useRef(null);
-  const mailingRef = useRef(null);
+
 
 
   const scrollToRef = (ref) => {
@@ -52,8 +50,8 @@ function Homepage() {
          className='Homepage-Background' 
          src={Main}
          decoding='async'
-         fetchPriority='high'></img>
-          <Header scrollToRef={scrollToRef} videosRef={videosRef} contactRef={contactRef} />
+       ></img>
+          <Header  />
           <div className='Homepage-Wrapper'>
             <div className='Homepage-Content Margin'>
               <div className='Text-Wrapper-Overflow'>

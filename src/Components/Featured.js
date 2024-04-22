@@ -1,10 +1,8 @@
 import CaramelTape from './Images/CaramelTape(2).jpg'
 
-import { useRef,useEffect, useState } from "react";
+import { useRef,useEffect} from "react";
 import {
   motion,
-  useTransform,
-  useScroll,
   useAnimation,
   useInView
 } from "framer-motion";

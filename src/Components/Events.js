@@ -1,9 +1,7 @@
 import Banner from './Images/Events.jpg'
-import { useRef,useEffect, useState } from "react";
+import { useRef,useEffect} from "react";
 import {
   motion,
-  useTransform,
-  useScroll,
   useAnimation,
   useInView
 } from "framer-motion";
@@ -30,7 +28,6 @@ function Events() {
             backgroundSize: 'cover'
           }}>
 
-
        <div className='Overflow-Container'>
        <div className='Banner-Wrap'>
           <div className="Banner-Carousel">
@@ -49,12 +46,12 @@ function Events() {
         </div>
 
         <div className='Events-Grid'>
-        <div class="tour-dates">
-          <div class="date-wrapper">
-          <div class="date">TBA</div>
-          <div class="venue">LONDON, UK</div>
-          <div class="tour-btn-div">
-            <div class="tour-btn tba">TICKETS</div>
+        <div className="tour-dates">
+          <div className="date-wrapper">
+          <div className="date">TBA</div>
+          <div className="venue">LONDON, UK</div>
+          <div className="tour-btn-div">
+            <div className="tour-btn tba">TICKETS</div>
           </div>
         
         </div>

@@ -1,7 +1,6 @@
 import Window from './Images/WindowSill.jpg'
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import { BsDisplay } from 'react-icons/bs';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -22,7 +21,6 @@ function Contact() {
     console.log('Form Data:', formData);
     let errors = {};
     let formIsValid = true;
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (formData.name.length < 1) {
       formIsValid = false;
@@ -62,14 +60,14 @@ function Contact() {
 
      
       <div className='Contact-Img-Wrap'>
-        <img className='Contact-Img' src={Window}></img>
+        <img className='Contact-Img' src={Window} alt='Thumbnail for contact page'></img>
       </div>
       <div className='Contact-Form'>
       <div class='Contact-Carousel'>CONTACT ME</div>
 
       <form className="Email-Form" onSubmit={handleSubmit}>
       <div className='CTA-Wrapper'>
-                <label className='Bookings-Form-Label' for="formControlLg">
+                <label className='Bookings-Form-Label'>
                   YOUR NAME
                 </label>
                 <input
@@ -85,7 +83,7 @@ function Contact() {
 
 
               <div className='CTA-Wrapper'>
-                <label className="Bookings-Form-Label" for="formControlDefault">
+                <label className="Bookings-Form-Label">
                   EMAIL ADDRESS
                 </label>
                 <input
@@ -100,7 +98,7 @@ function Contact() {
               </div>
 
 <div className='CTA-Wrapper'>
-                <label className="Bookings-Form-Label" for="textArea">
+                <label className="Bookings-Form-Label">
                   YOUR MESSAGE
                 </label>
                 <textarea

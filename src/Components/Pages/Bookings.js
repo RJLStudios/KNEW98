@@ -1,16 +1,13 @@
 
 import emailjs from 'emailjs-com';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
 import BookingBanner from '../Images/Booking Banner.jpg'
 import Header from '../Header';
-import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa";
 import { React, useState, useRef, useEffect } from "react";
 import {
     motion,
     useInView,
     useAnimation
 } from "framer-motion";
-
 
 
 function Bookings() {
@@ -46,7 +43,6 @@ function Bookings() {
           console.log('Form Data:', formData);
           let errors = {};
           let formIsValid = true;
-          var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       
           if (formData.name.length < 1) {
             formIsValid = false;
@@ -99,6 +95,7 @@ function Bookings() {
             <img 
          className='Homepage-Background Banner-Img' 
          src={BookingBanner}
+         alt='Booking Banner'
          loading='lazy'
          decoding='async'
          fetchPriority='high'></img>
