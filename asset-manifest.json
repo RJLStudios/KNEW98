@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/KNEW98/static/css/main.5ebab2b6.css",
-    "main.js": "/KNEW98/static/js/main.a23eb346.js",
+    "main.css": "/KNEW98/static/css/main.5ba4a783.css",
+    "main.js": "/KNEW98/static/js/main.3605de08.js",
     "static/media/Main.jpg": "/KNEW98/static/media/Main.349791fc75f27582e0e7.jpg",
     "static/media/Booking Banner.jpg": "/KNEW98/static/media/Booking Banner.79d815a497ebf543bdcb.jpg",
     "static/media/CaramelTape(2).jpg": "/KNEW98/static/media/CaramelTape(2).a6fb9270ec9d5c0f550f.jpg",
     "static/media/Events.jpg": "/KNEW98/static/media/Events.b01d3d56010002a55ed7.jpg",
     "static/media/WindowSill.jpg": "/KNEW98/static/media/WindowSill.7dbb18122e54c7587851.jpg",
     "index.html": "/KNEW98/index.html",
-    "main.5ebab2b6.css.map": "/KNEW98/static/css/main.5ebab2b6.css.map",
-    "main.a23eb346.js.map": "/KNEW98/static/js/main.a23eb346.js.map"
+    "main.5ba4a783.css.map": "/KNEW98/static/css/main.5ba4a783.css.map",
+    "main.3605de08.js.map": "/KNEW98/static/js/main.3605de08.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ebab2b6.css",
-    "static/js/main.a23eb346.js"
+    "static/css/main.5ba4a783.css",
+    "static/js/main.3605de08.js"
   ]
 }
