@@ -8,10 +8,12 @@ import Bookings from'./Components/Pages/Bookings.js';
 function App() {
   return (
     <>
+    <div className='App'>
     <Routes>
        <Route path="/" element={<Homepage/>} />
        <Route path="/Bookings" element={<Bookings />} />
     </Routes>
+    </div>
  </>
 
   );

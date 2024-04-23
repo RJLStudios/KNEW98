@@ -1,4 +1,3 @@
-import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa";
 
 function Footer() {
 

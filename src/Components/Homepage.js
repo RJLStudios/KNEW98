@@ -1,7 +1,7 @@
 
 import './App.css';
 import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import Main from './Images/Main.jpg'
 import { motion, useInView, useAnimation, } from "framer-motion";
 
@@ -17,10 +17,6 @@ import Footer from '../Components/Footer.js';
 function Homepage() {
   // FUNCTION FOR REF SCROLLING
   const featuredRef = useRef(null);
-  const videosRef = useRef(null);
-  const contactRef = useRef(null);
-
-
 
   const scrollToRef = (ref) => {
     window.scrollTo({
@@ -44,12 +40,12 @@ function Homepage() {
 
   return (
     <>
-      <div className='App'>
         <div className='Homepage'>
          <img 
          className='Homepage-Background' 
          src={Main}
          decoding='async'
+         alt='Landing Page Thumbnail'
        ></img>
           <Header  />
           <div className='Homepage-Wrapper'>
@@ -111,14 +107,14 @@ function Homepage() {
             </div>
           </div>
         </div>
-        <section ref={featuredRef}><Featured  /></section>
+        <section ref={featuredRef}><Featured/></section>
         <Videos />
         <Events />
         <Merch />
         <Contact />
         <Mailing />
         <Footer />
-      </div>
+ 
     </>
   )
 }
