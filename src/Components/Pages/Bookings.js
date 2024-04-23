@@ -158,7 +158,7 @@ function Bookings() {
                             name='name'
                             type='text'
                             className='Bookings-Input'
-                            placeholder='YOUR NAME'
+            
                             value={formData.name}
                             onChange={handleChange}
                             ></input>
@@ -171,7 +171,7 @@ function Bookings() {
                             name='email'
                              type='email'
                             className='Bookings-Input'
-                            placeholder='YOUR EMAIL'
+                    
                             value={formData.email}
                             onChange={handleChange}>
                               </input>
@@ -182,7 +182,7 @@ function Bookings() {
                             <textarea className='Bookings-Input'
                             name='message'
                              type='message'
-                               placeholder='YOUR MESSAGE'
+                       
                                value={formData.message}
                                onChange={handleChange}></textarea>
                             <span className='Error'>{errors.message}</span>

@@ -76,7 +76,7 @@ function Contact() {
                   className='Bookings-Input'
                   name="name"
                   value={formData.name} 
-                  placeholder='YOUR NAME'
+     
                   onChange={handleChange} />
               <span className='Error'>{errors.name}</span>
               </div>
@@ -92,7 +92,7 @@ function Contact() {
                   className='Bookings-Input'
                   name="email"
                   value={formData.email} 
-                  placeholder='YOUR EMAIL'
+          
                   onChange={handleChange} />    
               <span className='Error'>{errors.email}</span>
               </div>
@@ -108,7 +108,7 @@ function Contact() {
                   rows="4"
                   name="message"
                   value={formData.message} 
-                  placeholder='YOUR MESSAGE'
+              
                   onChange={handleChange} />
             
               <span className='Error'>{errors.message}</span>

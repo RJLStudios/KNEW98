@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Franklin Gothic', Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -12,15 +11,6 @@
 
 .Margin {
   padding: 0px 0.7em;
-}
-
-.App {
-  background-color: black;
-}
-
-.Body {
-  width: 100%;
-  height: fit-content;
 }
 
 /*FONT STYLES*/
@@ -33,8 +23,19 @@
 .Italic {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
-
 }
+
+.App {
+  background-color: black;
+  font-family: 'Franklin Gothic', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Body {
+  width: 100%;
+  height: fit-content;
+}
+
+
 
 /*HEADER STYLES*/
 .Text-Wrapper-Overflow{
@@ -558,6 +559,7 @@ top: 0;
 
 .More-Vids {
 width: 100%;
+font-size: 0.8em;
 margin: 4em 0em;
 }
 
