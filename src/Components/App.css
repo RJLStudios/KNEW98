@@ -54,6 +54,7 @@ height: fit-content;
   color: white;
   background-color: rgb(185, 184, 184);
   background-position: bottom;
+  overflow: hidden;
   }
 
 .Homepage-Background {
@@ -63,6 +64,16 @@ height: fit-content;
   height: 100%;
   z-index:1;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+  .Homepage-Background {
+    /* For smaller screens (e.g., mobile devices), adjust the background image size */
+    width: auto;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .Header-visible{
@@ -329,15 +340,6 @@ font-size: 1.2em;
   .Responsive-links {
     font-size: 0.8em;
     }
-}
-
-
-
-@media screen and (min-width:1000px) {
-.Homepage {
-background-position: center;
-
-}
 }
 
 .Featured {

@@ -2,7 +2,7 @@
 import './App.css';
 import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa";
 import { useRef, useEffect } from "react";
-import Main from './Images/Main.jpg'
+import Main from './Images/Main (1).jpg'
 import { motion, useInView, useAnimation, } from "framer-motion";
 
 import Header from '../Components/Header.js';
