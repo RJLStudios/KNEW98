@@ -14,6 +14,12 @@
 }
 
 /*FONT STYLES*/
+@font-face {
+  font-family: 'Libre Franklin';
+  src: url('/src/Fonts/LibreFranklin-VariableFont_wght.ttf') format('truetype'); /* Modern Browsers */
+  font-weight: 700;
+  font-style: normal;
+}
 
 :root {
   --primary-font-sz: 1.2em;
@@ -27,7 +33,7 @@
 
 .App {
   background-color: black;
-  font-family: 'Franklin Gothic', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Libre Franklin';
 }
 
 .Body {
