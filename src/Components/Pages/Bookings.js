@@ -148,7 +148,7 @@ function Bookings() {
         ></motion.div>
                 </div>
                 <div className='Booking-Toggle-Div'>
-                    <button onClick={toggleTheme}  onTouchStart={handleTouchStart} className={`Booking-Eng ${activeButton1 === 'Active' ? 'Active' : ''}`}>ENGINEERING SESSIONS</button>
+                    <button onClick={toggleTheme}  onTouchEnd={handleTouchStart} className={`Booking-Eng ${activeButton1 === 'Active' ? 'Active' : ''}`}>ENGINEERING SESSIONS</button>
                     <button onClick={toggleTheme}  onTouchEnd={handleTouchEnd} className={`Booking-Artist ${activeButton2 === 'Active' ? 'Active' : ''}`}>BOOK A SHOW</button>
                 </div>
                 </div>
