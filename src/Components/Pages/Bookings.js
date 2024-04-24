@@ -16,14 +16,31 @@ function Bookings() {
         const [activeButton1, setActiveButton1] = useState('Active');
         const [activeButton2, setActiveButton2] = useState('Inactive');
         const [quote, setQuote] = useState('Engineer-Quote')
+
+        //TOGGLE FORMS AND NIGHT MODE
         
-        const toggleTheme = () => {
+        const toggleTheme = () => {     
             const newTheme = theme === 'Dark' ? 'Light' : 'Dark';
             setTheme(newTheme);
             setActiveButton1 (activeButton1 === 'Active' ? 'Inactive' : 'Active');
             setActiveButton2 (activeButton2 === 'Active' ? 'Inactive' : 'Active');
             setQuote (quote === 'Engineer-Quote' ? 'Artist-Quote' : 'Engineer-Quote' )
         }
+
+       //PREVENT DEFAULT TOGGLE
+
+       const handleTouchStart = (event) => {
+        event.preventDefault();
+        toggleTheme();
+       }
+
+       
+       const handleTouchEnd = (event) => {
+        event.preventDefault();
+        toggleTheme();
+       }
+
+       //FORM VALIDATION AND LOGIC
 
         const [formData, setFormData] = useState({
           name: '',
@@ -131,8 +148,8 @@ function Bookings() {
         ></motion.div>
                 </div>
                 <div className='Booking-Toggle-Div'>
-                    <button onClick={toggleTheme}  onTouchStart={toggleTheme} className={`Booking-Eng ${activeButton1 === 'Active' ? 'Active' : ''}`}>ENGINEERING SESSIONS</button>
-                    <button onClick={toggleTheme}  onTouchStart={toggleTheme} className={`Booking-Artist ${activeButton2 === 'Active' ? 'Active' : ''}`}>BOOK A SHOW</button>
+                    <button onClick={toggleTheme}  onTouchStart={handleTouchStart} className={`Booking-Eng ${activeButton1 === 'Active' ? 'Active' : ''}`}>ENGINEERING SESSIONS</button>
+                    <button onClick={toggleTheme}  onTouchEnd={handleTouchEnd} className={`Booking-Artist ${activeButton2 === 'Active' ? 'Active' : ''}`}>BOOK A SHOW</button>
                 </div>
                 </div>
             </div>
