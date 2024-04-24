@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/KNEW98/static/css/main.5ba4a783.css",
-    "main.js": "/KNEW98/static/js/main.7186b59a.js",
-    "static/media/Main.jpg": "/KNEW98/static/media/Main.349791fc75f27582e0e7.jpg",
+    "main.css": "/KNEW98/static/css/main.24284450.css",
+    "main.js": "/KNEW98/static/js/main.f5bc83c2.js",
     "static/media/Booking Banner.jpg": "/KNEW98/static/media/Booking Banner.79d815a497ebf543bdcb.jpg",
+    "static/media/Main (1).jpg": "/KNEW98/static/media/Main (1).be11ec163bfa385d2399.jpg",
     "static/media/CaramelTape(2).jpg": "/KNEW98/static/media/CaramelTape(2).a6fb9270ec9d5c0f550f.jpg",
     "static/media/Events.jpg": "/KNEW98/static/media/Events.b01d3d56010002a55ed7.jpg",
     "static/media/WindowSill.jpg": "/KNEW98/static/media/WindowSill.7dbb18122e54c7587851.jpg",
     "index.html": "/KNEW98/index.html",
-    "main.5ba4a783.css.map": "/KNEW98/static/css/main.5ba4a783.css.map",
-    "main.7186b59a.js.map": "/KNEW98/static/js/main.7186b59a.js.map"
+    "main.24284450.css.map": "/KNEW98/static/css/main.24284450.css.map",
+    "main.f5bc83c2.js.map": "/KNEW98/static/js/main.f5bc83c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ba4a783.css",
-    "static/js/main.7186b59a.js"
+    "static/css/main.24284450.css",
+    "static/js/main.f5bc83c2.js"
   ]
 }
