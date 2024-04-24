@@ -110,7 +110,7 @@ function Bookings() {
             <Header />
             <div className='Booking-Banner'>
             <img 
-         className='Booking-Background Banner-Img' 
+         className='Booking-Background' 
          src={BookingBanner}
          alt='Booking Banner'
          loading='lazy'
