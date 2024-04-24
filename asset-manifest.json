@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/KNEW98/static/css/main.77a114cb.css",
+    "main.css": "/KNEW98/static/css/main.a19bdcb2.css",
     "main.js": "/KNEW98/static/js/main.1bd65c35.js",
     "static/media/Booking Banner.jpg": "/KNEW98/static/media/Booking Banner.79d815a497ebf543bdcb.jpg",
     "static/media/Main (1).jpg": "/KNEW98/static/media/Main (1).be11ec163bfa385d2399.jpg",
     "static/media/CaramelTape(2).jpg": "/KNEW98/static/media/CaramelTape(2).a6fb9270ec9d5c0f550f.jpg",
     "static/media/Events.jpg": "/KNEW98/static/media/Events.b01d3d56010002a55ed7.jpg",
     "static/media/WindowSill.jpg": "/KNEW98/static/media/WindowSill.7dbb18122e54c7587851.jpg",
+    "static/media/LibreFranklin-VariableFont_wght.ttf": "/KNEW98/static/media/LibreFranklin-VariableFont_wght.b6fbb7c6d08be7baa7d7.ttf",
     "index.html": "/KNEW98/index.html",
-    "main.77a114cb.css.map": "/KNEW98/static/css/main.77a114cb.css.map",
+    "main.a19bdcb2.css.map": "/KNEW98/static/css/main.a19bdcb2.css.map",
     "main.1bd65c35.js.map": "/KNEW98/static/js/main.1bd65c35.js.map"
   },
   "entrypoints": [
-    "static/css/main.77a114cb.css",
+    "static/css/main.a19bdcb2.css",
     "static/js/main.1bd65c35.js"
   ]
 }
