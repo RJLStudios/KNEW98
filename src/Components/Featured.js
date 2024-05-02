@@ -55,7 +55,7 @@ function Featured() {
           visible: { opacity: 1, y: 0 },
         }} 
         transition={{ delay: 0.5, duration: 1.7 }}
-        className='Featured-Desc A'> ’98 MAKES ALT R&B AND HIP-HOP, OFTEN MERGING VARIOUS GENRES AND CULTURAL INFLUENCES, LEANING TOWARDS THE MORE SOULFUL APPROACH AS HEARD ON HIS NEW EP ‘CARAMEL TAPE’.
+        className='Featured-Desc A Text-Wrapper-Overflow'> ’98 MAKES ALT R&B AND HIP-HOP, OFTEN MERGING VARIOUS GENRES AND CULTURAL INFLUENCES, LEANING TOWARDS THE MORE SOULFUL APPROACH AS HEARD ON HIS NEW EP ‘CARAMEL TAPE’.
         </motion.div>
        </div>
 

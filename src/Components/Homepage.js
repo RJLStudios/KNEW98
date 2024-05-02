@@ -4,7 +4,7 @@ import { FaInstagram, FaYoutube, FaSoundcloud, FaSpotify } from "react-icons/fa"
 import { useRef, useEffect } from "react";
 import Main from './Images/Main (1).jpg'
 import { motion, useInView, useAnimation, } from "framer-motion";
-
+import SmoothScroll from './SmoothScroll.js';
 import Header from '../Components/Header.js';
 import Featured from '../Components/Featured.js';
 import Videos from '../Components/Videos.js';
@@ -40,6 +40,7 @@ function Homepage() {
 
   return (
     <>
+
         <div className='Homepage'>
          <img 
          className='Homepage-Background' 
@@ -47,9 +48,11 @@ function Homepage() {
          decoding='async'
          alt='Landing Page Thumbnail'
        ></img>
-          <Header  />
+                <Header  />
           <div className='Homepage-Wrapper'>
+     
             <div className='Homepage-Content Margin'>
+  
               <div className='Text-Wrapper-Overflow'>
                 <motion.div
                   variants={{
@@ -92,19 +95,7 @@ function Homepage() {
                   className='Homepage-Bio'>SOULFUL BEATS, RAW EMOTIONS & UNFORGETTABLE EXPERIENCES.</motion.div>
               </div>
             </div>
-            <div className='Text-Wrapper-Overflow'>
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1 },
-                }}
-                initial="hidden"
-                animate='visible'
-                transition={{ duration: 2, delay: 0.2 }}>
-                <ul className="menu align-center expanded text-center SMN_effect-31 Scroll-Prompt" onClick={() => scrollToRef(featuredRef)}>
-                  <li className='No-List' ><a data-hover="SCROLL DOWN" ><span>SCROLL DOWN</span></a></li></ul>
-              </motion.div>
-            </div>
+          
           </div>
         </div>
         <section ref={featuredRef}><Featured/></section>
@@ -114,7 +105,6 @@ function Homepage() {
         <Contact />
         <Mailing />
         <Footer />
- 
     </>
   )
 }
